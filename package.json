@@ -8,6 +8,7 @@
     "react-scripts": "2.1.1"
   },
   "scripts": {
+    "storybook": "lv-storybook start",
     "start": "react-scripts start",
     "lint": "eslint src",
     "build": "react-scripts build",
@@ -24,6 +25,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "@lv/storybook": "^1.0.0-rc1",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-prettier": "^3.3.0",
     "eslint-plugin-css-modules": "^2.10.0",
