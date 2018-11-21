@@ -1,10 +1,12 @@
 import React from 'react';
 import styled from 'react-emotion';
+import { Provider } from 'react-redux';
 import { Board } from './Components/Board';
 import { InformationsPanel } from './Components/InformationsPanel';
 import { Title } from './Components/Title';
+import { store } from './Redux/createStore';
 
-const Grid = styled('div')({
+const AppGrid = styled('div')({
   display: 'grid',
   gridTemplateColumns: '2fr 1fr',
   gridTemplateRows: '70px 1fr',
@@ -25,11 +27,13 @@ const InformationsPanelStyled = styled(InformationsPanel)({
 })
 
 const App = () => (
-  <Grid>
-    <TitleStyled />
-    <BoardStyled />
-    <InformationsPanelStyled />
-  </Grid>
+  <Provider store={store}>
+    <AppGrid>
+      <TitleStyled />
+      <BoardStyled />
+      <InformationsPanelStyled />
+    </AppGrid>
+  </Provider>
 );
 
 export default App;
