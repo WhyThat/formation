@@ -1,10 +1,17 @@
 # Formation: React Redux Redux-saga
 
 ## Instructions
-L'objectif de cette partie est de rajouter des props à nos composant afin de les dynamiser
+Le but de cette partie sera d'initialiser un store redux
+
+Pour se faire il faut :
+- installer redux
+- installer react-redux
+- creer un store
+- connecter le store à notre app
+
 
 
 ## Next Step
 ```
-git checkout 4-CreateStore
+git checkout 5-CreateInitialStates
 ```
