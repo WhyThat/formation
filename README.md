@@ -1,12 +1,14 @@
 # Formation: React Redux Redux-saga
 
-# Instructions
-- Le but de cette partie va etre de découper l'interface en plusieurs composant
-Seul le découpage est important, un composant React composé de
+## Instructions
+Le but de cette partie seera de faire un petit peu d'UI pour que notre application ressemble un tant soit peu à quelque chose
 
-```javascript
-// Component.jsx
-export const Component = () => <div>nom du composant est suffisant</div>
+Nous allons utiliser `emotion` afin de styliser notre application 💄
+
+``` yarn add emotion react-emotion```
+
+
+## Next Step
 ```
-- Prochaine étape :
-```git checkout 2-ConstructUi```
+git checkout 3-AddProps
+```
