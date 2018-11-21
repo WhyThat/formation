@@ -7,8 +7,8 @@ export default {
   componentName: 'Board/PlayerTurn',
   mutations: [
     {
-      name: 'Default',
-      component: <PlayerTurn />,
+      name: 'With name=player1',
+      component: <PlayerTurn name="Player1" />,
     },
   ],
 };

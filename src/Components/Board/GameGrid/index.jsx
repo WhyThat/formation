@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'react-emotion';
 
@@ -26,16 +27,20 @@ const BoardCell = styled('button')( {
   justifyContent: 'center',
 })
 
-export const GameGrid = () => (
-  <GameBoard>
-    <BoardCell>1</BoardCell>
-    <BoardCell>1</BoardCell>
-    <BoardCell>1</BoardCell>
-    <BoardCell>1</BoardCell>
-    <BoardCell>1</BoardCell>
-    <BoardCell>1</BoardCell>
-    <BoardCell>1</BoardCell>
-    <BoardCell>1</BoardCell>
-    <BoardCell>1</BoardCell>
-  </GameBoard>
-)
+export const GameGrid = ({ grid }) => {
+  // eslint-disable-next-line react/no-array-index-key
+  const borderCells = grid.map((symbol, index) => <BoardCell key={`${symbol}${index}`}>{symbol}</BoardCell>)
+  return <GameBoard>{borderCells}</GameBoard>
+}
+
+GameGrid.propTypes = {
+  grid: PropTypes.arrayOf(PropTypes.string),
+}
+
+GameGrid.defaultProps = {
+  grid: [
+    '', '', '',
+    '', '', '',
+    '', '', '',
+  ]
+}

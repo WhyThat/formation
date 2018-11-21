@@ -1,4 +1,5 @@
-// eslint-disable jsx-a11y/accessible-emoji
+/* eslint-disable jsx-a11y/accessible-emoji */
+import propTypes from 'prop-types';
 import React from 'react';
 import styled from 'react-emotion';
 
@@ -20,10 +21,30 @@ const PlayerName = styled('span')({
 const Score = styled('span')({})
 const PlayerSymbol = styled('span')({})
 
-export const PlayerScore = () => (
+export const PlayerScore = ({ name, symbol, score }) => (
   <Block>
-    <PlayerSymbol aria-label="Player's symbol" role="img" alt="PlayerSymbol">❌</PlayerSymbol>
-    <PlayerName>PlayerName : </PlayerName>
-    <Score>10</Score>
+    <PlayerSymbol aria-label="Player's symbol" role="img" alt="PlayerSymbol">{symbol}</PlayerSymbol>
+    <PlayerName>
+      {name}
+      {' '}
+      :
+      {' '}
+    </PlayerName>
+    <Score>{score}</Score>
   </Block>
 )
+
+export const playerShape = {
+  name: propTypes.string,
+  symbol: propTypes.string,
+  score:  propTypes.number,
+}
+
+PlayerScore.propTypes = playerShape
+
+PlayerScore.defaultProps = {
+  score: 0,
+  name: '',
+  symbol: '',
+}
+
