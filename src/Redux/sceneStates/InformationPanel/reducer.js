@@ -1,3 +1,14 @@
+const informationPanelActionTypes = {
+  INCREMENT_WIN: 'SCENESTATE/INFORMATION_PANEL/INCREMENT_WIN',
+}
+
+export const  informationPanelActions = {
+  incrementPlayerScore: (player) => ({
+    type: informationPanelActionTypes.INCREMENT_WIN,
+    payload: player
+  })
+}
+
 const initialState = {
   player1: {
     name: 'Player 1',
@@ -9,7 +20,17 @@ const initialState = {
   },
 }
 
-export const informationPanelReducer = (state) => {
+export const informationPanelReducer = (state, action) => {
   if(!state) return initialState;
-  return state
+  switch (action.type) {
+    case informationPanelActionTypes.INCREMENT_WIN:
+      return {
+        ...state,
+        [action.payload]: {
+          ...state[action.payload],
+          score: state[action.payload].score + 1
+        }
+      }
+    default: return state
+  }
 }
