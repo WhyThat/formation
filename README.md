@@ -1,15 +1,18 @@
 # Formation: React Redux Redux-saga
 
 ## Instructions
-Le but de cette partie et de préparer tous les initial state et de connecter nos composants au store
+Pour cette étape il faut :
+- définir les actions que l'utilisateur pourra faire
+- créer l'actionType
+- créer l'action
+- créer le reducer associé au bon endroit
+- ajouter l'action dans le container grace au mapDispacthToProps
+- ajouter la props dans le composant
+- vérifier que tout fonctionne
 
-Pour se faire il faut :
-- Définir les composants nécessitant d´etre connectés au store
-- Ecrire les reducers correspondant dans le `Redux/sceneStates`
-- Créer les containers
-- modifier App.jsx pour qu'il utilise les containers
-
+Tips:
+- Ne pas oublier que le store doit rester immutable
 ## Next Step
 ```
-git checkout 6-defineUserActions
+git checkout 7-installReduxSaga
 ```
