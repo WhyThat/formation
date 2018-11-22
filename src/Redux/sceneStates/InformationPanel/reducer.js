@@ -1,0 +1,15 @@
+const initialState = {
+  player1: {
+    name: 'Player 1',
+    score: 0,
+  },
+  player2: {
+    name: 'Player 2',
+    score: 0,
+  },
+}
+
+export const informationPanelReducer = (state) => {
+  if(!state) return initialState;
+  return state
+}
