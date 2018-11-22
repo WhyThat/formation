@@ -2,17 +2,12 @@
 
 ## Instructions
 Pour cette étape il faut :
-- définir les actions que l'utilisateur pourra faire
-- créer l'actionType
-- créer l'action
-- créer le reducer associé au bon endroit
-- ajouter l'action dans le container grace au mapDispacthToProps
-- ajouter la props dans le composant
-- vérifier que tout fonctionne
+- installer redux-sage
+- créer une rootSaga
+- initialiser le middleware
+- run la rootSaga
 
-Tips:
-- Ne pas oublier que le store doit rester immutable
 ## Next Step
 ```
-git checkout 7-installReduxSaga
+git checkout 8-gameInstance
 ```
