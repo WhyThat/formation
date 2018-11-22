@@ -1,15 +1,11 @@
 import { createStore } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
+import { rootReducer } from './reducers';
 
-const initialState  = {}
 
-const reducer = (state) => {
-  if(!state) return initialState;
-  return state
-}
 
 export const store = createStore(
-  reducer,
+  rootReducer,
   composeWithDevTools(),
 );
 

@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'react-emotion';
 import { Provider } from 'react-redux';
-import { Board } from './Components/Board';
 import { InformationsPanel } from './Components/InformationsPanel';
 import { Title } from './Components/Title';
 import { store } from './Redux/createStore';
+import { BoardContainer } from './Redux/sceneStates/Board';
 
 const AppGrid = styled('div')({
   display: 'grid',
@@ -17,7 +17,7 @@ const TitleStyled = styled(Title)({
   gridColumn: '1 / span 2'
 })
 
-const BoardStyled = styled(Board)({
+const BoardStyled = styled(BoardContainer)({
   gridRow: '2',
   gridColumn: '1'
 })
