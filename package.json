@@ -6,6 +6,7 @@
     "emotion": "^9.2.12",
     "prop-types": "^15.6.2",
     "ramda": "^0.26.0",
+    "ramda-adjunct": "^2.11.0",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-emotion": "^9.2.12",

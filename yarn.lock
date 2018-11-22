@@ -9397,6 +9397,10 @@ raf@3.4.0:
   dependencies:
     performance-now "^2.1.0"
 
+ramda-adjunct@^2.11.0:
+  version "2.11.0"
+  resolved "https://registry.yarnpkg.com/ramda-adjunct/-/ramda-adjunct-2.11.0.tgz#45d7cf5da84f39ab3ff9e24b43dc098049a14822"
+
 ramda@^0.21.0:
   version "0.21.0"
   resolved "http://registry.npmjs.org/ramda/-/ramda-0.21.0.tgz#a001abedb3ff61077d4ff1d577d44de77e8d0a35"
