@@ -27,14 +27,16 @@ const BoardCell = styled('button')( {
   justifyContent: 'center',
 })
 
-export const GameGrid = ({ grid }) => {
-  // eslint-disable-next-line react/no-array-index-key
-  const borderCells = grid.map((symbol, index) => <BoardCell key={`${symbol}${index}`}>{symbol}</BoardCell>)
+export const GameGrid = ({ grid, onUserClick }) => {
+  const borderCells =
+    // eslint-disable-next-line react/no-array-index-key
+    grid.map((symbol, index) => <BoardCell onClick={onUserClick(index)} key={`${symbol}${index}`}>{symbol}</BoardCell>)
   return <GameBoard>{borderCells}</GameBoard>
 }
 
 GameGrid.propTypes = {
   grid: PropTypes.arrayOf(PropTypes.string),
+  onUserClick: PropTypes.func,
 }
 
 GameGrid.defaultProps = {
@@ -42,5 +44,6 @@ GameGrid.defaultProps = {
     '', '', '',
     '', '', '',
     '', '', '',
-  ]
+  ],
+  onUserClick: Function.prototype,
 }

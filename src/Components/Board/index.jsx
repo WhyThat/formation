@@ -12,17 +12,18 @@ const BoardBlock = styled('div')({
   height: '100%',
 })
 
-export const Board = ({ className, playerTurnName, grid }) => (
+export const Board = ({ className, playerTurnName, grid, onUserClick }) => (
   <BoardBlock className={className}>
     <PlayerTurn name={playerTurnName} />
-    <GameGrid grid={grid} />
+    <GameGrid grid={grid} onUserClick={onUserClick} />
   </BoardBlock>
 )
 
 Board.propTypes = {
   className: PropTypes.string,
   playerTurnName: PropTypes.string,
-  grid: PropTypes.arrayOf(PropTypes.string)
+  grid: PropTypes.arrayOf(PropTypes.string),
+  onUserClick: PropTypes.func,
 }
 
 Board.defaultProps = {
@@ -32,5 +33,6 @@ Board.defaultProps = {
     '', '', '',
     '', '', '',
     '', '', '',
-  ]
+  ],
+  onUserClick: Function.prototype,
 }

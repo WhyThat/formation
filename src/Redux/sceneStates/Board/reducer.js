@@ -1,3 +1,16 @@
+import { adjust, always } from 'ramda';
+
+export const boardActionsType = {
+  SET_CELL: 'SCENESTATE/BOARD/SET_CELL'
+}
+
+export const  boardActions = {
+  setCell: (indexCell) => ({
+    type: boardActionsType.SET_CELL,
+    payload: indexCell
+  })
+}
+
 const initialState = {
   playerTurnName: 'Player 1',
   grid: [
@@ -7,7 +20,14 @@ const initialState = {
   ]
 }
 
-export const boardReducer = (state) => {
+export const boardReducer = (state, action) => {
   if(!state) return initialState;
-  return state
+  switch(action.type) {
+    case boardActionsType.SET_CELL:
+      return {
+        ...state,
+        grid: adjust(action.payload, always('x'), state.grid)
+      }
+    default:  return state
+  }
 }
