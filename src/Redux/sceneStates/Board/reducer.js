@@ -1,17 +1,22 @@
 import { adjust, always } from 'ramda';
 
 export const boardActionsType = {
+  INITIALIZE_GRID: 'SCENESTATE/BOARD/INITIALIZE_GRID',
   ON_USER_CLICK: 'SCENESTATE/BOARD/ON_USER_CLICK',
-  SET_CELL: 'SCENESTATE/BOARD/SET_CELL'
+  SET_CELL: 'SCENESTATE/BOARD/SET_CELL',
 }
 
 export const  boardActions = {
-  setCell: (indexCell) => ({
-    type: boardActionsType.SET_CELL,
-    payload: indexCell
+  initializeGrid: (grid) => ({
+    type: boardActionsType.INITIALIZE_GRID,
+    payload: grid
   }),
   onUserClick: (indexCell) => ({
     type: boardActionsType.ON_USER_CLICK,
+    payload: indexCell
+  }),
+  setCell: (indexCell) => ({
+    type: boardActionsType.SET_CELL,
     payload: indexCell
   }),
 }
@@ -32,6 +37,11 @@ export const boardReducer = (state, action) => {
       return {
         ...state,
         grid: adjust(action.payload, always('x'), state.grid)
+      }
+    case boardActionsType.INITIALIZE_GRID:
+      return {
+        ...state,
+        grid: action.payload
       }
     default:  return state
   }
