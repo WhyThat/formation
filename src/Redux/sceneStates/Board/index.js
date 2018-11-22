@@ -8,7 +8,7 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = dispacth => ({
-  onUserClick: (clickedIndex) => () => dispacth(boardActions.setCell(clickedIndex))
+  onUserClick: (clickedIndex) => () => dispacth(boardActions.onUserClick(clickedIndex))
 })
 
 export const BoardContainer = connect(mapStateToProps, mapDispatchToProps)(Board)
