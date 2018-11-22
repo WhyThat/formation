@@ -15,7 +15,7 @@ export const  gameActions = {
     }
   }),
   changePlayer: (playerId) => ({
-    type: gameActionTypes.UPDATE_GRID,
+    type: gameActionTypes.CHANGE_PLAYER,
     payload: playerId,
   })
 }
@@ -40,8 +40,10 @@ export const gameReducer = (state, action) => {
         adjust(__, always(playerId), flatten(state.grid)),
       )(index)
     }
+
     case gameActionTypes.CHANGE_PLAYER:
       return assoc('playerPlayingId', action.payload, state)
+
     default:
       return state;
   }
