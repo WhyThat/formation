@@ -26,7 +26,7 @@ const initialState = {
     ['', '', ''],
     ['', '', ''],
   ],
-  playerPlayingId: 'player1',
+  playerPlayingId: 1,
 }
 
 export const gameReducer = (state, action) => {

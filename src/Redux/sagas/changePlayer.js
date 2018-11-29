@@ -1,15 +1,14 @@
-import { keys } from 'ramda';
 import { put, select } from 'redux-saga/effects';
 import { gameActions as appGameActions } from '../appState/game/reducer';
 import { selectCurrentPlayer, selectPlayers } from "../appState/selectors";
 
 export function* changePlayer(hasPlayerToChange) {
+  const players = yield select(selectPlayers);
   const currentPlayer = yield select(selectCurrentPlayer);
   if (hasPlayerToChange) {
-    const players = yield select(selectPlayers);
-    const nextPlayer = keys(players).find((player) => player !== currentPlayer);
-    yield put(appGameActions.changePlayer(nextPlayer))
+    const nextPlayer = players.find((player) => player.id !== currentPlayer);
+    yield put(appGameActions.changePlayer(nextPlayer.id))
     return nextPlayer;
   }
-  return currentPlayer;
+  return players.find((player) => player.id === currentPlayer);
 }
