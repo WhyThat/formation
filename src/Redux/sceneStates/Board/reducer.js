@@ -15,9 +15,12 @@ export const  boardActions = {
     type: boardActionsType.ON_USER_CLICK,
     payload: indexCell
   }),
-  setCell: (indexCell) => ({
+  setCell: (indexCell, symbol) => ({
     type: boardActionsType.SET_CELL,
-    payload: indexCell
+    payload: {
+      indexCell,
+      symbol
+    }
   }),
 }
 
@@ -36,7 +39,7 @@ export const boardReducer = (state, action) => {
     case boardActionsType.SET_CELL:
       return {
         ...state,
-        grid: adjust(action.payload, always('x'), state.grid)
+        grid: adjust(action.payload.indexCell, always(action.payload.symbol), state.grid)
       }
     case boardActionsType.INITIALIZE_GRID:
       return {

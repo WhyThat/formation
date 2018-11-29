@@ -14,9 +14,9 @@ export function* nextTurn(hasPlayerToChange) {
     return yield fork(nextTurn, false);
   }
   yield put(appStateGameActions.updateGrid(currentPlayer, indexCell))
-  yield put(boardActions.setCell(indexCell));
+  yield put(boardActions.setCell(indexCell, currentPlayer.symbol));
   const newGrid = yield select(selectGrid)
-  if (isWinner(newGrid, currentPlayer)) return yield put(gameActions.winner(currentPlayer))
+  if (isWinner(newGrid, currentPlayer)) return yield put(gameActions.winner(currentPlayer.id))
   if (isDraw(newGrid)) return yield put(gameActions.draw())
   return yield put(gameActions.nextTurn())
 }
